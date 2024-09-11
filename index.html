@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redireccionando...</title>
+    <script>
+        function enviarCotizacionWhatsApp() {
+            const ancho = document.getElementById("ancho").value;
+            const alto = document.getElementById("alto").value;
+            const material = document.getElementById("material").selectedOptions[0].text;
+            const luces = document.getElementById("luces").selectedOptions[0].text;
+            const pantalla = document.getElementById("pantallas").selectedOptions[0].text;
+            const graficoAncho = document.getElementById("graficoAncho").value;
+            const graficoAlto = document.getElementById("graficoAlto").value;
+            const piso = document.getElementById("pisos").selectedOptions[0].text;
+
+            const mensaje = `
+            Cotización del Stand:
+            - Ancho: ${ancho} metros
+            - Alto: ${alto} metros
+            - Material: ${material}
+            - Luces: ${luces}
+            - Pantalla: ${pantalla}
+            - Gráfico (ancho): ${graficoAncho} metros
+            - Gráfico (alto): ${graficoAlto} metros
+            - Piso: ${piso}
+            `;
+
+            const url = `https://diegorodriguez1994.github.io/Whats/index.html
+text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</head>
+<body>
+    <p>Redireccionando a WhatsApp...</p>
+</body>
+</html>
